@@ -9,9 +9,7 @@ public class CursorControllerScript : MonoBehaviour {
     [SerializeField] private GameObject playersSprite;
     [SerializeField] private GameObject cursorGameObject;
 
-	void Start () {
-		
-	}
+   
 	
 	void Update () {
         RotatePlayerTowardsMousePositon();	

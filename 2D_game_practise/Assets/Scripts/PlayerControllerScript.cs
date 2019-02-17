@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerControllerScript : MonoBehaviour {
     [SerializeField] private Transform cursorObject;
     [SerializeField] private float playerSpeed = 10;
+    [SerializeField] private ParticleSystem playerParticles;
 
     private Rigidbody2D playerRigidbody;
+
     
 	void Start () {
         playerRigidbody = GetComponent<Rigidbody2D>();
@@ -22,10 +24,14 @@ public class PlayerControllerScript : MonoBehaviour {
         {
             Vector2 direction = cursorObject.position - transform.position;
             playerRigidbody.velocity = direction*playerSpeed*Time.deltaTime;
+            playerParticles.enableEmission = true;
         }
         else
         {
             playerRigidbody.velocity = Vector2.zero;
+            playerParticles.enableEmission = false;
+
         }
     }
+
 }

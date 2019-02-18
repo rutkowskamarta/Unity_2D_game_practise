@@ -9,6 +9,8 @@ public class PlayerControllerScript : MonoBehaviour {
 
     private Rigidbody2D playerRigidbody;
 
+    public Vector2 movementVector;
+
     
 	void Start () {
         playerRigidbody = GetComponent<Rigidbody2D>();
@@ -25,13 +27,15 @@ public class PlayerControllerScript : MonoBehaviour {
             Vector2 direction = cursorObject.position - transform.position;
             playerRigidbody.velocity = direction*playerSpeed*Time.deltaTime;
             playerParticles.enableEmission = true;
+            movementVector = direction; 
+
         }
         else
         {
             playerRigidbody.velocity = Vector2.zero;
             playerParticles.enableEmission = false;
+            movementVector = Vector2.zero;
 
         }
     }
-
 }

@@ -41,8 +41,4 @@ public class CameraFollower : MonoBehaviour {
             Mathf.Clamp(smoothPosition.y, LeftLowerBound.position.y + cameraHeight/2, RightUpperBound.position.y - cameraHeight/2), smoothPosition.z);
         
     }
-
-   
-   
-
 }

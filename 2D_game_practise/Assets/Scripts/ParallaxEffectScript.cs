@@ -19,6 +19,13 @@ public class ParallaxEffectScript : MonoBehaviour {
 
     private void ParallaxEffect()
     {
+        Vector2 direction = playerControllerScipt.movementVector;
+   
+        backgroundLayers[0].transform.Translate(-direction*speeds[0]);
+        backgroundLayers[1].transform.Translate(-direction*speeds[1]);
+        backgroundLayers[2].transform.Translate(-direction*speeds[2]);
+        //backgroundLayers[1].transform.Translate(new Vector2(direction.x * speeds[1], direction.y*-speeds[1]));
+        //backgroundLayers[2].transform.Translate(new Vector2(direction.x * speeds[2], direction.y*-speeds[2]));
        
     }
 }
